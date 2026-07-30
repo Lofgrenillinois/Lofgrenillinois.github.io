@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        College Basketball: Seeding, Performance, and Cinderellas
+    </title>
+
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+
+            background: #f4f4f4;
+
+            color: #222;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+
+        main {
+
+            width: 1200px;
+
+            margin: 30px auto;
+
+            padding: 35px;
+
+            box-sizing: border-box;
+
+            background: white;
+        }
+
+
+        h1 {
+
+            margin-top: 0;
+
+            margin-bottom: 10px;
+
+            font-size: 32px;
+        }
+
+
+        #intro {
+
+            max-width: 900px;
+
+            line-height: 1.5;
+
+            color: #444;
+
+            margin-bottom: 20px;
+        }
+
+
+        #visualization {
+
+            display: block;
+
+            margin: 0 auto;
+        }
+
+
+        #scene-controls {
+
+            width: 1100px;
+
+            margin: 10px auto 30px auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        button {
+
+            padding: 8px 16px;
+
+            border: 1px solid #888;
+
+            border-radius: 4px;
+
+            background: #f5f5f5;
+
+            font-size: 14px;
+
+            cursor: pointer;
+        }
+
+
+        button:hover:not(:disabled) {
+
+            background: #e5e5e5;
+        }
+
+
+        button:disabled {
+
+            opacity: 0.4;
+
+            cursor: default;
+        }
+
+
+        #scene-indicator {
+
+            min-width: 120px;
+
+            text-align: center;
+
+            font-weight: bold;
+        }
+
+
+        #exploration {
+
+            margin-top: 35px;
+
+            padding-top: 25px;
+
+            border-top: 2px solid #ddd;
+
+            text-align: center;
+        }
+
+
+        #exploration h2 {
+
+            margin-top: 0;
+        }
+
+
+        #exploration p {
+
+            max-width: 800px;
+
+            margin: 10px auto;
+
+            line-height: 1.5;
+
+            color: #555;
+        }
+
+
+        #exploration-controls {
+
+            margin-top: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+
+        #year-select {
+
+            padding: 7px;
+
+            font-size: 14px;
+        }
+
+
+        .tooltip {
+
+            position: absolute;
+
+            visibility: hidden;
+
+            background: white;
+
+            border: 1px solid #999;
+
+            border-radius: 4px;
+
+            padding: 10px;
+
+            font-size: 13px;
+
+            pointer-events: none;
+
+            box-shadow:
+                0 2px 6px
+                rgba(0, 0, 0, 0.15);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main>
+
+
+    <h1>
+        College Basketball:
+        Seeding, Performance, and Cinderellas
+    </h1>
+
+
+    <div id="intro">
+
+        <p>
+            Before March Madness begins, every tournament team
+            has a statistical profile. This visualization compares
+            those profiles with tournament seeding and then follows
+            what happened when the games began.
+        </p>
+
+    </div>
+
+
+    <svg
+        id="visualization"
+        width="1100"
+        height="700"
+    ></svg>
+
+
+    <div id="scene-controls">
+
+        <button id="previous">
+            Previous
+        </button>
+
+
+        <span id="scene-indicator">
+            Scene 1 of 5
+        </span>
+
+
+        <button id="next">
+            Next
+        </button>
+
+    </div>
+
+
+    <div
+        id="exploration"
+        style="display: none;"
+    >
+
+        <h2>
+            Explore the Tournament
+        </h2>
+
+
+        <p>
+            Choose a season and revisit any part of the story.
+            The same visualization can be used to compare
+            different tournament years.
+        </p>
+
+
+        <div id="exploration-controls">
+
+            <label for="year-select">
+                Season:
+            </label>
+
+
+            <select id="year-select"></select>
+
+
+            <button id="explore-scene-1">
+                Seeds
+            </button>
+
+
+            <button id="explore-scene-2">
+                Seeding
+            </button>
+
+
+            <button id="explore-scene-3">
+                Results
+            </button>
+
+
+            <button id="explore-scene-4">
+                Performance
+            </button>
+
+
+            <button id="explore-scene-5">
+                Cinderellas
+            </button>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- D3 -->
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
