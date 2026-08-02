@@ -104,7 +104,7 @@ const postseasonScore = {
 
     "2ND": 6,
 
-    "Champion": 7
+    "Champions": 7
 
 };
 
@@ -143,7 +143,7 @@ function postseasonLabel(result) {
         return "Runner-up";
     }
 
-    if (result === "Champion") {
+    if (result === "Champions") {
         return "Champion";
     }
 
@@ -158,7 +158,7 @@ function postseasonLabel(result) {
 
 function postseasonColor(result) {
 
-    if (result === "Champion") {
+    if (result === "Champions") {
         return "#8B0000";
     }
 
@@ -1685,7 +1685,7 @@ function drawPostseasonLegend() {
 
     const outcomes = [
 
-        ["Champion", "#8B0000"],
+        ["Champions", "#8B0000"],
 
         ["Runner-up", "#D62728"],
 
@@ -1999,7 +1999,7 @@ function drawSceneFive(data, year) {
 
                     d.POSTSEASON === "2ND" ||
 
-                    d.POSTSEASON === "Champion";
+                    d.POSTSEASON === "Champions";
 
 
                 return (
